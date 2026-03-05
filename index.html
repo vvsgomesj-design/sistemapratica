@@ -28,6 +28,24 @@
     </style>
 </head>
 <body>
+<script>
+    // --- BLOCO DE SEGURANÇA SALVANDO VIDAS ---
+    (function() {
+        const senhaMestra = "Aprovação2026"; 
+        let autorizado = sessionStorage.getItem("acesso_vipvendas");
+
+        if (autorizado !== "true") {
+            let tentativa = prompt("SISTEMA SALVANDO VIDAS\nPor favor, digite a senha de acesso:");
+            
+            if (tentativa === senhaMestra) {
+                sessionStorage.setItem("acesso_vipvendas", "true");
+            } else {
+                alert("Senha incorreta! Acesso negado.");
+                window.location.href = "https://www.google.com";
+            }
+        }
+    })();
+</script>
 
 <div class="container">
     <div class="nav-bar">
